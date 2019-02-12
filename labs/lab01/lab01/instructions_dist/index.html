@@ -1,0 +1,156 @@
+<!-- Explorer starts here -->
+<!-- Explorer ends here -->
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hands-on 1</title>
+    <link rel="stylesheet" type="text/css" href="-mark2html-resources/assets/styles/atom-one-light.css">
+    <link rel="stylesheet" type="text/css" href="-mark2html-resources/assets/styles/style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="header-caption">
+                <img id="header-caption-logo" src="-mark2html-resources/assets/images/logo.png">
+                <div id="header-caption-name">Web Design DeCal</div>
+            </div>
+            <div id="header-content">
+                <div id="header-title">Hands-on 1</div>
+                <div id="header-due">February 6th</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="block block-highlight">
+
+<p>This lab will get us more familiar with HTML tags, and how we can combine them to structure our webpage. Try to do as much as possible, but if you don't finish, that's alright.</p>
+<p>Throughout the lab, it might help to refer back to <a href="https://docs.google.com/presentation/d/1R3zhInvMSgK5qd7sX98Y7IfXYn_hLEJiegEN4xsuLxk/edit?usp=sharing">this week's slides</a> if you'd like to revisit a concept from lecture.</p>
+
+            </div>
+
+<!-- Body starts here -->
+<p><strong>Before starting this lab, please make sure you're enrolled in WDD on <a href="https://piazza.com/class/jrh00fhfcit5of">our Piazza</a>.</strong></p>
+<p>To work on today's lab, you'll need to download…</p>
+<ul>
+<li>A <strong>text editor</strong> designed for writing code. We recommend <a href="https://code.visualstudio.com">Visual Studio Code</a>, but you can use whatever editor you prefer for everything in this course.</li>
+<li>A <strong>web browser</strong>, which we'll use to see and test our webpages. You can use any browser, but we recommend <a href="https://www.google.com/chrome/">Google Chrome</a> because of its rich tools ("DevTools") for visualizing and tweaking code in real-time as we test our designs.</li>
+</ul>
+<p>Once you've installed a text editor and web browser of your choice, continue reading below to get started on your Airbnb-inspired HTML skeleton!</p>
+<p>Here's what we'll be building: an HTML version of a wireframe design of an Airbnb-style webpage.</p>
+<p><img src="assets/skeleton.png" alt="Our HTML skeleton." /></p>
+<h2 id="part-1-setting-down-the-structure">Part 1: Setting Down the Structure</h2>
+<p>We'll start our HTML document with a few foundational tags, as shown below. Let's break down what these tags do (or how the browser interprets them).</p>
+<pre><code class="html language-html"><span class="hljs-meta">&lt;!doctype html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- Your meta info here! --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- Your content here! --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+<p><em>(This is review from lecture; feel free to continue on if you understand what these tags mean, but make sure that you're comfortable with this structure before you continue on!)</em></p>
+<ul>
+<li><p><code>&lt;!doctype html&gt;</code> tells the browser what type of document this is. In this case, it knows that this is an HTML 5 document; this is the declaration we'll always use throughout this class.</p></li>
+<li><p>The <code>&lt;html&gt;</code> tag is where your entire document lives. Aside from the document's declaration, all of the other tags in your document will go inside of this one in a valid HTML page.</p></li>
+<li><p>The <code>&lt;head&gt;</code> tag stores information about your HTML document, like links to certain resource files that your document may use (more on this soon!), or the title or author of the page. None of this content ever displays on the webpage itself--users won't be able to see it, but it's a good way to indicate metadata about the page to computers.</p></li>
+<li><p>The <code>&lt;body&gt;</code> tag is home to the content of your page! All of the elements that you see on a webpage come from here.</p></li>
+<li><p>Any text surrounded with <code>&lt;!--</code> and <code>--&gt;</code> is a comment. The browser will ignore comments; you can use them to leave notes to yourself about how you wrote part of your code or what it does, changes you need to make to a webpage, and so on.</p></li>
+</ul>
+<p>Notice the closing tags (the slash in <code>&lt;/sometag&gt;</code>) and nested structure (tags inside of tags, indented to make the structure easier to read), as covered in lecture! These tell your browser how to read through your HTML code properly.</p>
+<p>Create a new file called <code>index.html</code> in this folder. Then, in that file, copy the starter HTML code from the box above.</p>
+<h2 id="part-2-creating-content">Part 2: Creating Content</h2>
+<p>Now, we'll dive into the content! The Airbnb page that our skeleton is based on is broken up into sections that tell users about an experience with a title and a description. Each section follows the same structure, but has different content<a href="#footnote-1" id="footnote-1-backlink"><sup>[1]</sup></a>. Let's create the first section:</p>
+<pre><code class="html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"cover-1.png"</span> /&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- Size-two heading --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Surfing Experiences<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Mauris vulputate lobortis nisl, feugiat imperdiet arcu condimentum a.
+        Morbi fermentum eros mi, ut gravida nibh lobortis ac.
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></code></pre>
+<p><em>(If you're thinking, "What's this <strong>Lorem Ipsum</strong> thing?" it's a common piece of placeholder text used in design. Check out this <a href="https://en.wikipedia.org/wiki/Lorem_ipsum">Wikipedia entry on it</a>.)</em></p>
+<p>We use a few of the most common tags in this section:</p>
+<ul>
+<li><code>&lt;section&gt;</code> is a semantic tag that represents a distinct section of a webpage.</li>
+<li><code>&lt;img&gt;</code> displays an image, whose file name is specified in <code>src</code><a href="#footnote-3" id="footnote-3-backlink"><sup>[3]</sup></a>.</li>
+<li><code>&lt;h2&gt;</code> is the second most prominent kind of header. Sizes range from 1 through 6; just change the number next to <code>h</code> to use headers of other levels of hierarchy. For example, <code>&lt;h1&gt;</code> is the biggest header, and <code>&lt;h6&gt;</code> is the smallest.</li>
+<li><code>&lt;p&gt;</code> tags enclose a paragraph of text. Even if you put text on multiple lines in a <code>&lt;p&gt;</code> tag, they'll all appear in a single paragraph.</li>
+</ul>
+<p>Once you understand these tags, add the structure above to the <code>&lt;body&gt;</code> of your document.</p>
+<p>Go ahead and create 2 more sections like this one! We've included images <code>cover-1.png</code>, <code>cover-2.png</code>, and <code>cover-3.png</code> in the starter folder for you to use. At this point, you may want to be able to view the webpage you're building for reference. To view your webpage<a href="#footnote-2" id="footnote-2-backlink"><sup>[2]</sup></a>, find your <code>index.html</code> file, and open it in your browser (double-click on the file Finder on Mac or File Explorer on Windows); you should see something similar to the image shown at the start of this lab, albeit missing a few sections, once you've finished this part of the lab.</p>
+<h4 id="tips-to-success">Tips to success:</h4>
+<ul>
+<li>Think about parent-child relationships of different elements on a webpage--headers, images, paragraphs, quotations… How do parent-child relationships between different sections of a site help make it clearer to understand?</li>
+<li>Put comments in <code>&lt;!-- comment tags --&gt;</code>.</li>
+</ul>
+<h2 id="part-3-creating-the-header">Part 3: Creating the Header</h2>
+<p>The <code>&lt;header&gt;</code> of a document is different from its <code>&lt;head&gt;</code> (despite the similarity in names)--and in fact, also belongs in the <code>&lt;body&gt;</code>! It's a semantic HTML tag used for storing content that you would see in the header bar at the top of a page like YouTube, Twitter, or Facebook, like a title, a search bar, and some user information. We'll create ours for this skeleton using the structure below:</p>
+<pre><code class="html language-html"><span class="hljs-comment">&lt;!-- Put the top of the page in header...  oooh this is semantic! --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- Search box --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"search"</span> /&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- Navigation block (links to other pages), also semantic! --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- this is a link to the page 'become-host' --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"become-host"</span>&gt;</span>Become a Host<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- another link, to the 'account' page --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"account"</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- We can put an image inside a link --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"avatar.png"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- don't forget to close the header tag! --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span></code></pre>
+<p>In this header, we use a few new tags:</p>
+<ul>
+<li><code>&lt;input&gt;</code> is a way of collecting information from the user. There are many different input <code>type</code>s, like buttons, checkboxes, textareas, and in this case, search bars.</li>
+<li><code>&lt;nav&gt;</code> is a semantic tag for creating a section of the page responsible for navigating to other pages on the website.</li>
+<li><code>&lt;a&gt;</code> is an anchor tag, which acts as a link to another webpage or another part of the webpage you're working on. When you click on the link, it'll go to the page or URL set as the <code>href</code> value.</li>
+</ul>
+<p>In your <code>index.html</code>, add the code for the header section from the box above once you understand these new tags. Be sure to view the page to see what you've created.</p>
+<p>You're done! Congrats on finishing your first WDD lab--grab a WDD TA or instructor for checkoff when you're ready.</p>
+<!-- Body ends here -->
+
+        </div>
+        <div class="section explorer">
+            <h2>More to Explore</h2>
+            <div class="block block-highlight">
+                <p>
+Want to dive deeper into the content covered in this lab? You can explore some related topics here! If not, continue on to checkoff. You don't have to understand stuff we talk about in this section.
+</p>
+                <input id="explorer-toggle" type="checkbox"/>
+                <label for="explorer-toggle" class="btn">Release the kraken</label>
+                <p></p>
+                <div class="block block-unhighlight explorer-text">
+
+<p><small class="footnote" id="footnote-1"><a href="#footnote-1-backlink"><sup>[1]</sup></a>: Elements that maintain the same structure/look but differ in content or data are often called <strong>components</strong>. Component-based architectures are out of scope for the semester, but if you're curious, you can look into React, Angular, or Vue--or ask about how to create component-based architectures in jQuery, which we'll be talking about at the end of this semester. If you'd like to learn more in the long term, the <a href="https://reactdecal.org">React DeCal</a> is a fantastic place to dive in!</small></p>
+<p><small class="footnote" id="footnote-2"><a href="#footnote-2-backlink"><sup>[2]</sup></a>: There are lots of other ways to view a page while you're coding it, that are a bit more convenient than constantly reloading a page in your browser. For those of you using Visual Studio Code as your text editor, you can install an extension called <a href="https://marketplace.visualstudio.com/items?itemName=tht13.html-preview-vscode">HTML Preview</a>. When you're ready to view your page, you can right click inside of the text editor while editing an HTML file, and select <code>vscode-preview-server: Launch on browser</code>. Your page will open in the browser, and a program called Browsersync will keep updating the page preview as you edit your HTML and CSS code, no reloading required! Eventually, you can set up preview servers with your own configuration to accommodate more complex build needs, but those won't be covered in this class.</small></p>
+<p><small class="footnote" id="footnote-3"><a href="#footnote-3-backlink"><sup>[3]</sup></a>: Technically speaking, the value of the <code>src</code> attribute is the <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/Dealing_with_files#File_paths">path</a> to the image file. You can read more about it if you want to, but we'll talk about paths properly next week.</small></p>
+
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Submission</h2>
+            <div class="block block-highlight">
+
+<!-- Submission info starts here -->
+<p>Your lab checkoff word will be the same as your attendance word! No need to submit anything :)</p>
+<!-- Submission info ends here -->
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<!-- @webdesigndecal/mark2html@0.0.11 -->
