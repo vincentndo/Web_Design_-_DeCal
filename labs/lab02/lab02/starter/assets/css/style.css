@@ -1,0 +1,269 @@
+body{
+	position: relative;
+	margin: 0;
+	font-family: 'Lato', sans-serif;
+	font-size: 18px;
+	font-weight: 300;
+	color: #333;
+}
+
+#navbar{
+	z-index: 2;
+	position: fixed;
+	top: 0px;
+	color: #333;
+	background-color: white;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	width: 100%;
+	box-shadow: 1px 1px 4px rgba(0,0,0,0.12);
+}
+
+.container{
+	width: 75%;
+	margin: auto;
+}
+
+/*--------*/
+/*-STEP 2-*/
+/*--------*/
+
+/*Add the appropriate pseudo-class to .nav-element*/
+.nav-element:hover {
+	/*Add the properties below here*/
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+/*Add the entire appropriate button pseudo selector below here.
+Add necessary properties and a transition to distinguish
+this pseudo state from it's normal state*/
+
+#button:hover{
+	cursor: pointer;
+	background-color: Fuchsia;
+}
+
+
+
+/*DONE WITH STEP 2*/
+
+/*--------*/
+/*-STEP 3-*/
+/*--------*/
+/*Add all of the selectors and pseudo-selectors for the link*/
+
+
+
+
+
+/*DONE WITH STEP 3*/
+
+/*--------*/
+/*-STEP 4-*/
+/*--------*/
+
+#form{
+	position: absolute;
+	width: 400px;
+	margin-top: 24px;
+	right: 12.5vw;
+	z-index: 1;
+	background-color: #e0e0e0;
+	font-size: 24px;
+	/*STEP 4: Add more properties*/
+    
+    
+
+}
+
+#button{
+	margin-top: 24px;
+	padding-top:12px;
+	padding-bottom:12px;
+	background-color: #104F55;
+	color:white;
+	font-size: 18px;
+	font-weight: 700;
+	text-align: center;
+	/*STEP 4: Add more properties*/
+    transition: background-color 1s;
+    
+
+}
+
+input{
+	height: 36px;
+	width: 100%;
+	margin-top: 24px;
+	padding-left: 5%;
+	width: 95%;
+	overflow: hidden;
+	font-family: 'Lato', 'sans-serif';
+	font-size: 16px;
+	/*STEP 4: Add more properties*/
+    
+    
+
+}
+
+/*STEP 4: Add a pseudo selector below to create a response
+as you hover over items in the "Our Rides" gallery.*/
+
+
+
+
+
+/*END OF STEP 4 AND END OF HANDS-ON*/
+
+/*----------*/
+/*OTHER CODE*/
+/*----------*/
+/*No need to edit anything below unless you want to play around with it*/
+
+#title {
+	font-size: 48px;
+	text-align: center;
+	margin-bottom: 24px;
+}
+
+#brand{
+	font-size: 24px;
+	font-weight: 700;
+	padding-top: 0px;
+}
+
+.float-left{
+	float: left;
+	margin-right: 24px;
+	padding-top: 6px
+}
+
+.float-right{
+	float: right;
+	margin-left: 24px;
+	padding-top: 6px;
+}
+
+#main-page{
+	margin-top: 61px;
+	padding-top: 36px;
+	margin-bottom: 48px;
+}
+
+#slogan-text{
+	font-size: 48px;
+}
+
+.light-text{
+	font-weight: 100;
+}
+
+#splash-image{
+	background-image: url(../img/car.jpg);
+	background-color: black;
+	height: 512px;
+	width: 100%;
+	margin-bottom: 48px;
+	background-size: cover;
+}
+
+#gallery {
+	width: 100%;
+	list-style: none;
+	margin: 0 auto;
+	text-align: center;
+	padding: 0;
+}
+
+.items {
+	position: relative;
+	height: 300px;
+	width: 150px;
+	border: 2px solid #ccc;
+	padding: 24px;
+	display: inline-block;
+	margin: 12px;
+}
+
+.sub-title {
+	height: 32px;
+	padding-bottom: 12px;
+	font-size: 24px;
+	font-weight: 300px;
+	text-align: center;
+}
+
+.text {
+	position: absolute;
+	height: auto;
+	width: 150px;
+	font-size: 18px;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 12px;
+}
+
+.vehicle{
+	background-color: white;
+	height: 150px;
+	width: 150px;
+	border-radius: 200px;
+}
+
+.veh-img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius:200px;
+}
+
+#veh-gallery {
+	margin-bottom: 100px;
+}
+
+#form .container{
+	margin-top: 24px;
+}
+
+#name{
+	margin-bottom: 24px;
+}
+
+.login{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#check{
+	font-size: 14px;
+	margin-top: 24px;
+	margin-bottom: 48px;
+	font-weight: 700;
+}
+
+#footer {
+	font-size: 12px;
+	padding: 0;
+	list-style: none;
+	margin-bottom: 48px;
+}
+
+#footer>li {
+	display: inline-block;
+	margin-right: 12px;
+}
+
+.under>a {
+	text-decoration: none;
+	color: #333;
+}
+
+.under:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#brand:hover{
+	text-decoration: none !important;
+}

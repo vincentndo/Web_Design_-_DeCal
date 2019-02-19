@@ -1,0 +1,135 @@
+<!-- Explorer starts here -->
+<!-- Explorer ends here -->
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hands-on 2</title>
+    <link rel="stylesheet" type="text/css" href="-mark2html-resources/assets/styles/atom-one-light.css">
+    <link rel="stylesheet" type="text/css" href="-mark2html-resources/assets/styles/style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="header-caption">
+                <img id="header-caption-logo" src="-mark2html-resources/assets/images/logo.png">
+                <div id="header-caption-name">Web Design DeCal</div>
+            </div>
+            <div id="header-content">
+                <div id="header-title">Hands-on 2</div>
+                <div id="header-due">February 13th</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="block block-highlight">
+
+<p>This lab will explore CSS and get us more familiar with <em>selectors</em>, and how we can use CSS to improve the look and feel of our webpages. Try to do as much as possible, but if you don't finish, that's alright.</p>
+<p>Today, we will use our knowledge of selectors and pseudo-selectors to style our WDD-yft landing page. While you wait, discuss design decisions with your cohort-mates!</p>
+<p>Throughout the lab, it might help to refer back to <a href="https://docs.google.com/presentation/d/18msEXd0Qy-bP7qGwdWrz8FWvJw06Ry5tG1QNVLQ-h2k/edit">this week's slides</a> if you'd like to revisit a concept from lecture.</p>
+
+            </div>
+
+<!-- Body starts here -->
+<p>At the end of this hands-on, you should have something like the page below (split into two pics)</p>
+<p><img src="assets/img/final_1.png" alt="Final screen 1" /><br />
+<img src="assets/img/final_2.png" alt="Final screen 2" /></p>
+<h2 id="part-1-linking-our-files">Part 1: Linking our files</h2>
+<p>Open the starting <code>index.html</code> file in your preferred browser.</p>
+<p>Woah, this site looks nothing like the end product! It should look like this right now:</p>
+<p><img src="assets/img/step_0.png" alt="Step 0 screenshot" /></p>
+<p>This is because we haven't linked our HTML and CSS files. Before we proceed, open <code>index.html</code> and <code>style.css</code> in your text editor, so we can make this site look goooooood.</p>
+<p>Now, let's correctly link <code>style.css</code> into <code>index.html</code>, so the browser can know where to find the CSS rules for the HTML tags on this page. We can do this using the <code>&lt;link&gt;</code> tag -- try it!</p>
+<p><code>style.css</code> includes some styles we've pre-defined for this lab. You should end up with something that looks like this:</p>
+<p><img src="assets/img/step_1.png" alt="Step 1 screenshot" /></p>
+<p>Without this link, our html structure wouldn't be able to know where to find our CSS selectors that make the site look siq and cool.</p>
+<h2 id="part-2-playing-with-fire-pseudo-selectors">Part 2: Playing with <del>fire</del> Pseudo-selectors</h2>
+<p>Pseudo-selectors are really cool because they allow us to put our elements in a special, temporary state. This helps draw the focus of the user to certain parts of the page and can also provide a response to user actions.</p>
+<p>Currently, if you place your cursor over the navbar options, nothing happens. Let's provide a visual cue to the user!</p>
+<ul>
+<li>Add the appropriate pseudo-class to <strong>nav-element</strong> so that, when the cursor <em>hovers</em> over the navbar items, we can make something happen (once CSS rules are added).</li>
+<li>Now, add a property to this pseudo-class so that the navbar elements are underlined when the cursor is over it. (If you don't know how to add an underline, Google it! Something like "CSS text underline" should do the trick.)</li>
+<li>Change the <code>cursor</code> CSS property so that the nav elements appear to be clickable when the cusor is over them. (Note: if you don't know what this visual looks like, visit one of your favorite websites and observe what happens to the cursor when you place it over a clickable item, like the nav bar. It's slight, but provides an almost subconscious cue to the user that something can be clicked.)</li>
+</ul>
+<p>Great! Now our navbar seems functional! It should look like this when you hover over it:</p>
+<p><img src="assets/img/step_2_1.png" alt="Step 2.1 screenshot" /></p>
+<p>But we aren't done with our pseudo-selectors! Our <code>&lt;button&gt;</code> doesn't visually indicate to the user that it can be clicked.</p>
+<ul>
+<li>Add the entire missing pseudo-selector to our CSS so the button will provide some sort of visual response when we place the cursor over it.</li>
+<li>Slightly change some properties, like color or opacity, to provide a good indication of the button's action and to distinguish it from its normal state. Keep design principles in mind.</li>
+<li>Change the cursor property so it it seems clickable (like we did for the navbar).</li>
+<li>The pseudo state response is really fast. Feel free to add a transition to slow it down and make it more pleasing.</li>
+</ul>
+<p>This is what it should look like, when the mouse is out of the picture:</p>
+<p><img src="assets/img/step_2_2A.png" alt="Step 2.2 screenshot, no hover" /></p>
+<p>This is what it might look like when you hover over your button:</p>
+<p><img src="assets/img/step_2_2B.png" alt="Step 2.2 screenshot, with hover" /></p>
+<p>There are so many possiblities and you should explore websites on your own when you get a chance!</p>
+<h2 id="part-3-all-on-your-own-🚀">Part 3: All on your own 🚀</h2>
+<p>Up for a challenge?</p>
+<ul>
+<li>In the html file, add the appropriate link tag to the entire phrase <strong>"Check your status here"</strong> so that when the user clicks this phrase, it will direct the user to some other page. Choose whatever page you would like.</li>
+<li>Give that tag an <code>id</code>.</li>
+<li>In the CSS file, select this specific tag and give it some cool properties in its normal state.</li>
+<li>Now, add a pseudo-selector and change some properties for when your cursor is over the text so a user can easily recognize that it can be clicked.</li>
+<li>Add a pseudo-selector for when you're clicking down on the link. Add new properties to differentiate it from its normal state.</li>
+<li>Finally, add a pseudo-selector<a href="#footnote-2" id="footnote-2-backlink"><sup>[2]</sup></a> to indicate to the user when they have clicked this link before. Add new properties to differentiate it from its other states.</li>
+</ul>
+<p><em><strong>Tip</strong>: It is helpful to check your work in an incognito or private browser window when dealing with different pseudo-selectors for links. Otherwise, your browser may remember your history of clicking the link and you won't be able to observe the different pseudo states since it will always appear in the state of being visited.</em></p>
+<p>Awesome job! See how much you can do for just one tag? Hopefully you're getting the hang of these selectors now! The addition in step 3 was minimal, but can have a great effect. It should look similar to this:</p>
+<p><img src="assets/img/step_3.png" alt="Step 3 screenshot" /></p>
+<h2 id="part-4-some-more-css-and-fun-extras">Part 4: Some more CSS and fun extras</h2>
+<p>Now we can play around with other CSS properties to make our site look even better. Use your creativity and design knowledge to standout (or maybe blend in).</p>
+<ul>
+<li>Add some border properties to the <code>&lt;button&gt;</code> and <code>&lt;form&gt;</code> elements (whatever you think will work).</li>
+<li>Add a pseudo-selector to create a good visual response when your cursor goes over gallery items under "Our Rides".</li>
+<li>Create a pseudo state just for the 1st and 3rd items. Then create a <em>different</em> pseudo state for just the 2nd and 4th items. Think of how many different ways you can select them.</li>
+</ul>
+<p>We can even make fine changes to default elements for an even greater user experience. Take a look at the form in our html code. When you click an input box, you'll notice that there is an outline color (in this case, a lightly blue) to indicate to the user that they are focused on this box and can type here. This outline color is essentially a default pseudo-class. Let's change the <code>&lt;input&gt;</code> box to match the main colors of the website<a href="#footnote-1" id="footnote-1-backlink"><sup>[1]</sup></a>.</p>
+<p>Because <code>&lt;input&gt;</code> has a default <code>outline-color</code>, we don't need to create a pseudo-selector, but we can change it within the actual input tag in order to override this default property. Add an <code>outline-color</code> property to match the color of the normal state of the <code>&lt;button&gt;</code>. This is a minor touch that can go unnoticed, but actually adds a lot to the design.</p>
+<p>Does your form now look like this when you type text?</p>
+<p><img src="assets/img/step_2_3.png" alt="Step 4 screenshot" /></p>
+<p>Your final website should now look something like this and have some super sick pseudo states (maybe with your own creative touches!). These are two pictures, which is why it might look odd that the nav bar reappears.</p>
+<p><img src="assets/img/final_1.png" alt="Final version screenshot 1" /><br />
+<img src="assets/img/final_2.png" alt="Final version screenshot 2" /></p>
+<p>You're done! Great work on taking your first foray into CSS 👌 find a WDD TA or instructor to get your attendance/checkoff word when you're ready.</p>
+<p>If you want more CSS selectors practice, check out <a href="https://flukeout.github.io/">this practice game</a> made by <a href="https://github.com/flukeout">@flukeout</a>.</p>
+<!-- Body ends here -->
+
+        </div>
+        <div class="section explorer">
+            <h2>More to Explore</h2>
+            <div class="block block-highlight">
+                <p>
+Want to dive deeper into the content covered in this lab? You can explore some related topics here! If not, continue on to checkoff. You don't have to understand stuff we talk about in this section.
+</p>
+                <input id="explorer-toggle" type="checkbox"/>
+                <label for="explorer-toggle" class="btn">Release the kraken</label>
+                <p></p>
+                <div class="block block-unhighlight explorer-text">
+
+<p><small class="footnote" id="footnote-1"><a href="#footnote-1-backlink"><sup>[1]</sup></a>: <strong>Optional tutorial on viewing the <code>:focus</code> state</strong></small></p>
+<p>You can see this default attribute of outline color in action by selecting one of the <code>&lt;input&gt;</code> lines in web inspector, and then clicking <strong>:hov</strong> by "filter" and finally selecting <code>:focus</code> in the checkbox dropdown, which activates the :focus selector for just this element. Skimming through the web inspector, you'll notice that a new attribute within the <code>:focus</code> selector has appeared, <code>outline</code>, which is implementing the default <code>-webkit-focus-ring-color</code>.</p>
+<p><img src="assets/img/webinspect1.png" alt="Chrome Web Inspector, part 1" /><br />
+<img src="assets/img/webinspect2.png" alt="Chrome Web Inspector, part 2" /></p>
+<p><small class="footnote" id="footnote-2"><a href="#footnote-2-backlink"><sup>[2]</sup></a>: <strong>Even more pseudo-selectors</strong></small></p>
+<p>At this point, we've used the word "pseudo-selector" a lot--they're quite powerful in creating interactive behavior for a website without using JavaScript. Pseudo-selectors reflect the <a href="https://www.quora.com/Whats-state-in-a-web-application"><strong>state</strong> of a webpage</a>, or the current set of properties and values that define a particular instance of your webpage in the browser (you can think of state like chemical state: just as water can be ice or vapor, a checkbox can be checked or unchecked, or a div can be focused<a href="#footnote-1" id="footnote-1-backlink"><sup>[1]</sup></a> or unfocused). That's why we're able to select for special conditions that arise while the user is interacting with a webpage, rather than only ever being able to select elements based on the type of element or its relationship to other elements.</p>
+<p>If you'd like to learn more about what you can do with pseudoselectors, we've included the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">MDN specification of pseudo-classes</a>. There are also <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements">pseudo-elements</a>, which are elements that are rendered as part of an existing element (e.g. the first line of a <code>&lt;p&gt;</code> paragraph, or in a more common use case, a <a href="https://css-tricks.com/almanac/selectors/a/after-and-before/"><code>::before</code> or <code>::after</code> pseudo-element</a> that comes just before or just after the selected element). Feel free to explore this <a href="https://www.smashingmagazine.com/2016/05/an-ultimate-guide-to-css-pseudo-classes-and-pseudo-elements/">helpful and comprehensive guide</a> on pseudo-classes and pseudo-elements as well. You can do some <a href="https://css-tricks.com/pseudo-element-roundup/">incredible things</a> with these features, from creating complex shapes and icons to developing an entire website without HTML! Don't worry if you don't understand many of these selectors yet; you won't be required to know them for the course, but they're a lot of fun to work with, and offer some exciting creative potential.</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Submission</h2>
+            <div class="block block-highlight">
+
+<!-- Submission info starts here -->
+<p>Your lab checkoff word will be the same as your attendance word! No need to submit anything :)</p>
+<!-- Submission info ends here -->
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<!-- @webdesigndecal/mark2html@0.0.11 -->
