@@ -1,37 +1,75 @@
 /* PROBLEM 1: Remove white margin of body, html */
 /* YOUR CODE HERE */
+HTML, body {
+   margin: 0;
+   padding: 0;
+}
 
 /* PROBLEM 2: Select profile picture and make it round */
 /* YOUR CODE HERE */
+#profile-pic {
+    border-radius: 40px;
+    overflow: hidden;
+}
 
 /* PROBLEM 3: Flesh our your follow button! 5 px for the
 top and bottom, 30 for the left and right*/
 /* YOUR CODE HERE */
+#follow-button {
+    padding: 5px 30px;
+}
 
 /* PROBLEM 4: Turn items into a square, 120x120 px image */
 /* YOUR CODE HERE */
+.item {
+    height: 120px;
+    width: 120px;
+}
 
 /* PROBLEM 5: Create a 10 px horizontal space between items */
 /* YOUR CODE HERE */
+.row {
+    margin: 10px;
+}
 
 /* PROBLEM 6: Create a 10px vertical space between rows */
 /* YOUR CODE HERE */
+.item {
+    margin-right: 10px;
+}
 
 /* PROBLEM 7: Add 20px of space between each navigation item */
 /* YOUR CODE HERE */
+.navbar-item {
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
 /* PROBLEM 8: Create a hover effect, so that items will have
 full opacity when hovered over! It should also have a
 transition period of 0.2 seconds*/
 /* YOUR CODE HERE */
+.item:hover{
+    opacity: 0;
+    transition: 0.2s;
+}
 
 /* PROBLEM 9: Add a click effect to the follow button, so
 the font becomes size 18 when clicked on!*/
 /* YOUR CODE HERE */
+#follow-button:active {
+    font-size: 18px;
+}
 
 /* PROBLEM 10: Add a hover effect such that the text of the
 navigation has an opacity of 1 when hovered over!*/
 /* YOUR CODE HERE */
+.navbar-item:hover {
+    opacity: 0;
+}
 
 /* PROBLEM 11: In one selection, make the follow button, picture
 items, and nav bar items have a pointer cursor */
+#follow-button, .item, .navbar-item:hover {
+    cursor: pointer;
+}
