@@ -1,0 +1,68 @@
+#logo { 
+    /* YOUR CODE HERE */
+}
+
+
+#title {
+    /* YOUR CODE HERE */
+}
+
+
+#step1 {
+    /* YOUR CODE HERE */
+}
+
+#step2 {
+    /* YOUR CODE HERE */
+}
+
+#step3 {
+    /* YOUR CODE HERE */
+}
+
+#step4 { 
+    /* YOUR CODE HERE */
+}
+
+#step5 {
+    /* YOUR CODE HERE */
+}
+
+
+#step6 {
+    /* YOUR CODE HERE */
+}
+
+
+#step7 {
+    /* YOUR CODE HERE */
+}
+
+
+/*No need to edit code below here */
+
+#content { 
+    width: 1000px;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+#title-container {
+    height: 20%;
+    position: relative;
+}
+
+.instructions {
+    position: relative;
+    height: 80%;
+}
+
+#step4 {
+    width: 320px;
+}
+
+#step5 {
+    width: 320px;
+    margin: 0px;
+}
+

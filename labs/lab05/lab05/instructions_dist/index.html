@@ -1,0 +1,73 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hands-on 5</title>
+    <link rel="stylesheet" type="text/css" href="-mark2html-resources/assets/styles/atom-one-light.css">
+    <link rel="stylesheet" type="text/css" href="-mark2html-resources/assets/styles/style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="header-caption">
+                <img id="header-caption-logo" src="-mark2html-resources/assets/images/logo.png">
+                <div id="header-caption-name">Web Design DeCal</div>
+            </div>
+            <div id="header-content">
+                <div id="header-title">Hands-on 5</div>
+                <div id="header-due">March 6th</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="block block-highlight">
+
+<p>Welcome to the IKEA Billy lab! </p>
+<p>Our friend Billy is trying to build his Billy bookshelf from Ikea. However, our friend Billy reads instruction manuals in the wrong order, and therefore we need to position the instruction manual in a way that Billy can read properly. </p>
+<p>As you go through this lab, think about which positioning tools feel the most powerful and effective in helping you manipulate the position of our images. There's not always going to be a single correct answer; but try to think about which methods feel easier or simpler for certain scenarios.</p>
+
+            </div>
+
+<!-- Body starts here -->
+<h1 id="overview">Overview</h1>
+<p>At the end of this lab, you should have something like the page below.</p>
+<p><img src="assets/img/step10.png" alt="Finished project" /></p>
+<h1 id="instructions">Instructions</h1>
+<p>We should start with something that looks like this. Not very easy for Billy to read with all the scrolling required!</p>
+<p><img src="assets/img/step1.png" alt="Step 1" /></p>
+<p>Start by positioning the IKEA logo at the bottom right hand corner of the page. The IKEA logo should remain at the bottom right hand corner of the page even as you scroll.</p>
+<p><img src="assets/img/step2.png" alt="Step 2" /></p>
+<p>Next, position the title of the instruction manual to the center of the div container that holds the title.</p>
+<p><img src="assets/img/step3.png" alt="Step 3" /></p>
+<p>Now we can start with placing the directions in the specific order that Billy will read them in. Start by positioning step 1 in the very center of the container that it is held in using absolute positioning.</p>
+<p><img src="assets/img/step4.png" alt="Step 4" /></p>
+<p>Then, use absolute positioning to place step 2 directly above step 1.</p>
+<p><img src="assets/img/step5.png" alt="Step 5" /></p>
+<p>Then, we want to use absolute positioning to have step 3 to the right of step 2.</p>
+<p><img src="assets/img/step6.png" alt="Step 6" /></p>
+<p>Next, use relative position in step 4 to have step four be directly under step 3. How does using relative positioning feel to you compared to using absolute positioning? Easier? Harder?</p>
+<p><img src="assets/img/step7.png" alt="Step 7" /></p>
+<p>In step 5, again use relative positioning to position step 5 to the top left hand corner of our container. Think about how in step 4 and 5 our relative starting points for the images are different than if we used absolute positioning.</p>
+<p><img src="assets/img/step8.png" alt="Step 8" /></p>
+<p>In step 6, go back to using absolute positioning, and place step 6 directly under step 5. Notice how in the HTML that step 6 is nested within step 5, so think about what step 6 will be positioned relative to, and feel free to set positions in CSS for both step 6 and its parent <code>div</code>.</p>
+<p><img src="assets/img/step9.png" alt="Step 9" /></p>
+<p>Finally, for step 7, position the image any way you’d like so that it appears to the right of step 6.</p>
+<p><img src="assets/img/step10.png" alt="Step 10" /></p>
+<p>Great work on your first foray into positioning!</p>
+<!-- Body ends here -->
+
+        </div>
+        <div class="section">
+            <h2>Submission</h2>
+            <div class="block block-highlight">
+
+<!-- Submission info starts here -->
+<p>Your lab checkoff word will be the same as your attendance word! No need to submit anything :)</p>
+<!-- Submission info ends here -->
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<!-- @webdesigndecal/mark2html@0.0.11 -->
