@@ -1,0 +1,183 @@
+<!-- Explorer starts here -->
+<!-- Explorer ends here -->
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hands-on 3</title>
+    <link rel="stylesheet" type="text/css" href="-mark2html-resources/assets/styles/atom-one-light.css">
+    <link rel="stylesheet" type="text/css" href="-mark2html-resources/assets/styles/style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="header-caption">
+                <img id="header-caption-logo" src="-mark2html-resources/assets/images/logo.png">
+                <div id="header-caption-name">Web Design DeCal</div>
+            </div>
+            <div id="header-content">
+                <div id="header-title">Hands-on 3</div>
+                <div id="header-due">February 20th</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="block block-highlight">
+
+<p>In this lab, we'll see some tools for setting up a file structure that'll work well for your future web design projects. Try to do as much as possible, but if you don't finish, that's alright.</p>
+<p>Today, we will create a basic file structure that you can use for your upcoming group project, and discuss the value of other ways to organize your files! While you wait, discuss your thoughts on project structure or previous assignments with your table-mates!</p>
+
+            </div>
+
+<!-- Body starts here -->
+<h2 id="part-1-a-quick-review-of-paths">Part 1: A Quick Review of Paths</h2>
+<p>Before we dive into our file structure, it's important that we understand <strong>relative and absolute paths</strong> well.</p>
+<p><em>(<strong>Quick tip:</strong> the word "directory" means the same thing as the word "folder" you'd use to refer to folders on your computer. We use those two terms interchangeably.)</em></p>
+<p>A <strong>path</strong> is a piece of text that points our computer or browser to a specific file or folder. It tells the computer where to look to find the desired file. Let's look at a few examples of absolute and relative paths:</p>
+<p>The <code>/</code> (forward slash) at the beginning of <code>/hello/world/hi.html</code> denotes that it's an <strong>absolute path</strong>. If a path is absolute, it tells the computer to start looking for the desired file at "root" (base-level folder) of the computer's hard drive. In this case, we look in the <code>hello</code> folder inside of our root folder, and then the <code>world</code> folder inside of our <code>hello</code> folder, where we should find <code>hi.html</code>.</p>
+<p>If we instead write <code>hello/world/hi.html</code>, without the leading forward slash, we're using a <strong>relative path</strong>. If a path is relative, we start looking in the current directory--that is, the directory (or folder) that our current HTML file is in. To put this in more concrete terms:</p>
+<ul>
+<li>With the example given, we first look in the current folder for a folder called <code>hello</code>, and then within that folder, look for a folder called <code>world</code>, within which we find <code>hi.html</code>.</li>
+<li>Let's say that our current directory is called <code>project1</code>, and is inside of another directory called <code>wddprojects</code>. If we were to move <code>project1</code> outside of the <code>wddprojects</code> folder, all of the links on our website--all of our relative paths--would still be intact! Nothing would break, because all of our paths are written as relative paths, meaning they tell you the location of files relative to what folder the current HTML file is in.</li>
+</ul>
+<p>We can also refer to the current or previous directory using relative paths. We write the current directory as <code>.</code> (single dot), and the parent directory as <code>..</code> (two dots). The directory's grandparent is then referred to as <code>../..</code>, its great grandparent is <code>../../..</code>, and so on. Some examples of this being used with our previous example:</p>
+<ul>
+<li><code>./hello/world/hi.html</code> points to the same file we pointed to in the previous example.</li>
+<li><code>./</code> points to our <code>project1</code> folder.</li>
+<li><code>../</code> points to our <code>wddprojects</code> folder.</li>
+<li><code>../project1/hello/world/hi.html</code> points to the same file we pointed to in the first bullet point, though you'd seldom use a path like this, since it's rather repetitive (the entire <code>../project1/</code> can be truncated to <code>./</code> or just empty space).</li>
+</ul>
+<p>Why do we usually prefer relative to absolute paths?</p>
+<ul>
+<li>On a webpage, we might not always know our absolute path, but we always are able to find things from the perspective of our current directory (relative).</li>
+<li>Relative paths are much shorter than their absolute equivalents, which makes them much easier to write out.</li>
+<li>Our paths are no longer dependent on any folder other than the root folder of our project! In other words, if we move our project folder into another folder (or onto another web domain), nothing changes--our website will not break. It's safer!</li>
+</ul>
+<h2 id="interlude-project-workspaces">Interlude: Project Workspaces</h2>
+<p>We interrupt this lab for a short interlude! To make your workflow simpler in future projects and other assignments, we recommend a simple change to how you handle your files. Rather than double clicking on a single file to open it in the editor of your choice, try drag-and-dropping your <em>entire</em> project folder into the editor window. (Note the sidebar with a list of all your files.)</p>
+<p><img src="assets/img/make_workspace.gif" alt="Creating a workspace in VSCode" /></p>
+<p>Dragging and dropping your project folder creates a new "workspace", where you can see all files in your project folder in the sidebar, and switch between them easily. It makes it easier to access the files specific to that project, and sometimes includes other features. Explore your editor further to learn more!</p>
+<p>In Visual Studio Code, another way to create a workspace is as follows: in your menu, choose <em>File > Open Workspace…</em>, and choose a folder that you'd like to open as a workspace. The process is similar for other text editors.</p>
+<h2 id="part-2-linking-paths">Part 2: Linking Paths</h2>
+<p>As you continue to learn more about web development and design, you'll find that it's helpful to have more than one webpage in a website. Each HTML file serves as a single page<a href="#footnote-1" id="footnote-1-backlink"><sup>[1]</sup></a> in your website, like a home page, an about page, or a page for viewing blog articles. To link to another page, use an <code>&lt;a href="..."&gt;</code> anchor tag! You've seen anchor tags before in previous homework assignments and labs. Let's explore an example:</p>
+<pre><code class="html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"about.html"</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#contact"</span>&gt;</span>Contact<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"./help.html"</span>&gt;</span>Help<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"./articles/1.html"</span>&gt;</span>First Article<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span></code></pre>
+<p>Consider the navigation links given above in a file called <code>index.html</code>. (Those pages themselves are not necessarily standard for a navbar.)</p>
+<ul>
+<li>In the first link, we link to <code>about.html</code>, which is a relative path to a file called <code>about.html</code> that's in the same directory as our <code>index.html</code> (the file from which we're linking).</li>
+<li>In our next link, we link to <code>#contact</code>, which points to the element with the id <code>contact</code> on the current webpage (<code>index.html</code>). The page will scroll down to make the <code>#contact</code> element visible.</li>
+<li>In the third link, we link to a file called <code>help.html</code> in our current directory using another relative path (in a slightly different style).</li>
+<li>In our fourth link, we link to a file called <code>1.html</code> inside of an <code>articles</code> directory inside of our current directory.</li>
+</ul>
+<h2 id="part-3-testing-your-intuition">Part 3: Testing Your Intuition</h2>
+<p>Let's put some of these ideas to the test! Before we explain how WDD recommends you structure your project, we want you to try to organize your HTML/CSS files the way you think works best.</p>
+<p>Let's say we're building a site with three pages: a home page, an about page, and a contacts page. We've prepared these three pages for you in your <code>starter/</code> folder. Open the folder / workspace in your editor to see these HTML files:</p>
+<pre><code>index.html 👈 the home<span class="hljs-built_in"> page
+</span>about.html 👈 the about page, with more descriptions
+contacts.html 👈 a<span class="hljs-built_in"> page </span>with contact information</code></pre>
+<p>In each HTML file, we have a navigation bar, where we can add links to other pages on our site, so we can click on links to move between those pages. Try adding <code>&lt;a&gt;</code> tags in the nav bar (<code>&lt;nav&gt;</code>) so you can click on those links to move between the three pages when you open them in the browser. Think about how you can use paths in the <code>href</code> attribute on the <code>&lt;a&gt;</code> tags to reference other HTML pages.</p>
+<p>Although we won't write much CSS for this lab, let's imagine that for these three pages, we want three different CSS files, because they contain different elements and information. We've prepared a small set of CSS files, one that's shared across all the HTML pages to style the nav bar, and one that's unique to each page to style things specific to each page:</p>
+<pre><code>main<span class="hljs-selector-class">.css</span> 👈 CSS that applies to all three pages, like &lt;nav&gt;
+
+index<span class="hljs-selector-class">.css</span> 👈 CSS <span class="hljs-keyword">for</span> stuff only on index<span class="hljs-selector-class">.html</span>
+about<span class="hljs-selector-class">.css</span> 👈 CSS <span class="hljs-keyword">for</span> stuff only on about<span class="hljs-selector-class">.html</span>
+contacts<span class="hljs-selector-class">.css</span> 👈 ... and so on</code></pre>
+<p>In web design, it's quite common to split up CSS (and later, JavaScript) files in this way, so we have one common file that applies to the bits common to all pages, and CSS files that are unique to each page.</p>
+<p>Once we grow our site and add more images, files, and CSS stylesheets, you might imagine that having everything in the same, top-level folder can get pretty unwieldy pretty quickly. Once we start adding images and video links, icons, and scripts all to the same folder, it can get pretty confusing and hard to organize.</p>
+<p><strong>Pause:</strong> Talk to a table-mate about some different ways you could organize different files in this project, so it can stay more organized as the project grows. There's many different ways web developers organize their folders, so try to think about more than just the one style you've see in WDD :)</p>
+<ul>
+<li>What folders might you need?</li>
+<li>Where could each image or CSS file go?</li>
+<li>How could you name files, so they're easily identifiable?</li>
+</ul>
+<h2 id="part-4-a-more-uniform-structure">Part 4: A More Uniform Structure</h2>
+<p>In this section, we'll introduce why Web Design DeCal projects are structured the way they are.</p>
+<p>In WDD, our project folder is usually organized like this:</p>
+<pre><code>project/
+├── about<span class="hljs-selector-class">.html</span>
+├── contacts<span class="hljs-selector-class">.html</span>
+├── index<span class="hljs-selector-class">.html</span>
+│
+├── assets/
+│   ├── icons/
+│   ├── img/
+│   │   └── logo<span class="hljs-selector-class">.png</span>
+│   └── videos/
+│
+├── css/
+│   ├── about<span class="hljs-selector-class">.css</span>
+│   ├── contacts<span class="hljs-selector-class">.css</span>
+│   ├── index<span class="hljs-selector-class">.css</span>
+│   └── main<span class="hljs-selector-class">.css</span>
+│
+└── js
+    └── main.js</code></pre>
+<p>In our <code>project/</code> folder for the project, we can notice a few things.</p>
+<ul>
+<li>We have all of our HTML files in the same place, at the top of the project directory</li>
+<li>All of our images, videos, icons, etc. live in their respective folders, all inside the <code>assets/</code> folder</li>
+<li>All of our CSS lives inside a dedicated <code>css/</code> folder, named after our pages. This makes it quick and easy to find a CSS file specific to a given page</li>
+<li>Later, when we get to JavaScript, we'll also see that our JavaScript (JS) files will live inside their own dedicated folder, inside <code>js/</code>.</li>
+</ul>
+<p>Before you go on, organize the HTML and CSS files in the starter folder to follow the structure above. You'll notice that, after you move the files around into their own folders, some of the paths to the CSS files will be changed, so the stylesheets might not work! Try to fix these by updating the paths referenced in the <code>&lt;link&gt;</code> tags in the each HTML page, so your pages appear correctly again.</p>
+<h2 id="part-5-different-project-different-paths">Part 5: Different Project, Different Paths?</h2>
+<p>While the file structure that we've introduced here is simple, streamlined, and flexible enough for other projects, you might wonder whether other file structures are used, or when you might want to use a different structure. The answer is yes, and often! The file structure used is dependent on what type of project you're building, the team with which you're building it, and the tools and frameworks you're using to build it.</p>
+<p>For projects that use vanilla HTML, CSS, and JavaScript, the file structure that we use in WDD is sufficient and effective. It enforces a good separation of concerns, and you can easily add more files to it while staying organized. It's also convention to use our file structure within the scope of all WDD projects, which makes it easier for others in WDD (like instructors, TAs, and group members for your group project) to understand how your code works.</p>
+<p>But WDD's structure isn't the only effective structure for web development. It works best in the scope of this course, and projects similar to those that we assign. Info on other file structures is far out of the scope of this course, but you can find more in our footnotes<a href="#footnote-3" id="footnote-3-backlink"><sup>[3]</sup></a> if you're curious. Just know that there are many, many ways to organize your files for a given project.</p>
+<p>With so many options, how do you know which file structure to choose for your project? In WDD, we recommend that you use our suggested file structure. But beyond WDD, here are some factors to take into account:</p>
+<ul>
+<li>What file structure will make my application most <strong>scalable</strong>? That is, which file structure is easiest to add to and expand in an organized way as I continue to build, rebuild, and rebuild again my application over the years (trust us, you will!)?</li>
+<li>What file structure makes the most sense to my <strong>team</strong> and me? What file structure is organized enough and intuitive for us to use? What kinds of roles are those on my team serving? If our team is interdisciplinary (we have some members who are not developers, but perhaps are responsible for design, branding and marketing, research, or some artistic pursuit), then what file structure will best help us to integrate the work of other creatives on the team with our digital product?</li>
+<li>What <strong>stack</strong> are we using? <em>(A stack is all of the technology you're using for a project, including frameworks, languages, etc.)</em></li>
+<li>How have others organized projects like the one that I'm working on? Are there <strong>popular patterns</strong><a href="#footnote-2" id="footnote-2-backlink"><sup>[2]</sup></a> that exist already? Why are those patterns popular?</li>
+</ul>
+<p>Realistically, your file structure will <strong>not</strong> make or break your project. You can always change what you've created. That being said, having an organized file structure from the get-go will make your workflow as a developer and designer much simpler.</p>
+<p>Don't worry if you find this overwhelming--you don't need to know all of this for the class! But we thought we'd give you a good look at things you might get to explore in the future as you continue to build projects of your own.</p>
+<p>You're done! Great work exploring and creating your own file structures 👌 find a WDD TA or instructor to get your attendance/checkoff word when you're ready.</p>
+<!-- Body ends here -->
+
+        </div>
+        <div class="section explorer">
+            <h2>More to Explore</h2>
+            <div class="block block-highlight">
+                <p>
+Want to dive deeper into the content covered in this lab? You can explore some related topics here! If not, continue on to checkoff. You don't have to understand stuff we talk about in this section.
+</p>
+                <input id="explorer-toggle" type="checkbox"/>
+                <label for="explorer-toggle" class="btn">Release the kraken</label>
+                <p></p>
+                <div class="block block-unhighlight explorer-text">
+
+<p><small class="footnote" id="footnote-1"><a href="#footnote-1-backlink"><sup>[1]</sup></a>: Single-Page Websites</small></p>
+<p>Although each HTML page traditionally serves as one page, with the power of JavaScript, we can build websites whose entire content spans only one HTML page! Consider the WDD site, for example: the entire landing page, despite having many scrollable sections, is written as one webpage. Some webapps also employ this sort of functionality. Other websites use an entirely different system of pages based on JavaScript rather than HTML, where different HTML elements are rendered inside of one parent div on the same page based on routing that a JavaScript framework handles. Some websites also do this to create transitions or animations between their pages, though the same can be achieved with a multiple HTML file structure as well by using certain other JavaScript frameworks.</p>
+<p><small class="footnote" id="footnote-2"><a href="#footnote-2-backlink"><sup>[2]</sup></a>: Popular Patterns</small></p>
+<p>Patterns exist for a lot more than just file structure--you'll also find patterns for how to name your CSS classes (e.g. <a href="getbem.com">BEM</a>), what stack to use for certain types of projects (<a href="https://webinerds.com/6-web-development-stacks-try-2017/">a few examples here</a>), and more. If it's been done before by enough people, there'll likely be a pattern for it.</p>
+<p>There are also tools that exist to help you maintain patterns of development! <a href="yeoman.io">Yeoman</a> is a build tool for easily creating new parts of a project while following a preset structure (based on frameworks, etc.). A lot of text editors and other tools can check the style of your code (i.e., the way you've written a program, like whether you used tabs or spaces, how you separate out your braces and brackets per line, and more).</p>
+<p>On large projects, you might even use tools that can automatically build your project for you! When you use languages or frameworks that have to be processed before they're uploaded to the web (like TypeScript, Babel or newer versions of ECMAScript, JSX, or SCSS, among others), you can create developer pipelines that make your workflow simpler and more efficient (typing out one command or clicking on one button rather than many in order to have your files ready to go). Using tools like these might also change your file structure--you might separate all of your files out into a <code>src/</code> folder, while files used by tools for your workflow exist at the root directory of your project. Examples of build tools that work like this are NPM, Gulp, Grunt, and Webpack, none of which you'll need for the course, but offer a lot of power later along the line, and are fascinating from a technological standpoint.</p>
+<p><small class="footnote" id="footnote-3"><a href="#footnote-3-backlink"><sup>[3]</sup></a>: File Structures Far Down Along The Line</small></p>
+<p>If you're curious about file structures that JavaScript-heavy projects use, read on! The following is very far out of the scope of the class.</p>
+<p>Some projects are built around a structure of components, or reusable parts of a website that update based on some state. Projects like that often separate their components into different folders, which contain JavaScript files that represent those components and CSS files used to style each component.</p>
+<p>Some projects are structured entirely around a given JavaScript framework (a bundle of code that developers use to structure their application)! Depending on what framework(s) a developer uses, you might see <code>reducers/</code> and <code>actions/</code> folders, a <code>mixins/</code> folder, or perhaps a <code>router/</code> folder. Even within the scope of each framework, developers use many different file structures for different kinds of projects, so long as they promote some organized, scalable structure (see Part 5).</p>
+<p>Some projects follow patterns<a href="#footnote-2" id="footnote-2-backlink"><sup>[2]</sup></a> of application design that are independent of what frameworks you're using. Atomic Design, for example, is a principle of application design (that often goes hand in hand with component structures) that suggests that developers think about different parts of an application at different levels: atoms (tiny, simple things, like a button or some text), molecules (atoms put together, like a card), organisms (whole sections of a webpage), templates (the webpage without any data), and pages (the final webpage). Each of these five levels gets a folder. But this is once more only one possible structure--the options are infinite!</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Submission</h2>
+            <div class="block block-highlight">
+
+<!-- Submission info starts here -->
+<p>Your lab checkoff word will be the same as your attendance word! No need to submit anything :)</p>
+<!-- Submission info ends here -->
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<!-- @webdesigndecal/mark2html@0.0.11 -->

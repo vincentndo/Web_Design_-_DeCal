@@ -1,0 +1,31 @@
+body {
+    background: #eee;
+    padding-top: 90px; /* account for header height */
+    font-family: 'San Francisco', 'Segoe UI', 'Ubuntu', sans-serif;
+}
+
+nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: lightgreen;
+    height: 80px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+a {
+    display: block;
+    padding: 8px 20px;
+    box-sizing: border-box;
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
