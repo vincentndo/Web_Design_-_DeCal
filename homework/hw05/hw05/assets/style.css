@@ -57,6 +57,11 @@ width: 100%;
     border-radius: 50%;
     background: #2f353f;  
 }
+#q1-circle {
+    position: relative;
+    top: -105px;
+    left: 40px
+}
 
 /* Question 2 */
 
@@ -72,6 +77,10 @@ width: 100%;
     width: 50px;
     height: 50px;
     background: #2f353f;
+}
+.q2-square {
+    display: inline-block;
+    margin: 20;
 }
 
 /* Question 3 */
@@ -95,6 +104,15 @@ width: 100%;
     margin: auto;
     line-height: 1.5;
 }
+#q3-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+#q3-content {
+    margin-top: 80px;
+}
 
 
 /* Question 4 */
@@ -115,6 +133,11 @@ width: 100%;
 	background-size: 100% 100%;
 	width: 100%;
 	height: 100%;
+}
+#q4-hero {
+    position: absolute;
+    top: 50%;
+    margin-top: -22px;
 }
 
 /* Question 5 */
@@ -149,6 +172,12 @@ width: 100%;
     text-align: center;
     padding: 10px 0px;
 }
+#q5-submit, #q5-cancel {
+    position: relative;
+    top: 16%;
+    margin: auto;
+    margin-top: 8px;
+}
 
 /* Question 6 */
 
@@ -178,6 +207,12 @@ width: 100%;
     top: 50%;
     margin-top: -50px;
 }
+.q6-item {
+    display: inline-block;
+    position: relative;
+    margin-left: 60px;
+    top: -36px;
+}
 
 /* Question 7 and Extra */
 
@@ -205,4 +240,11 @@ width: 100%;
     width: 500px;
     font-size: 16px;
     line-height: 1.5;
+}
+#q7-sidebar {
+    position: fixed;
+    height: 100%;
+}
+#q7-title, #q7-content {
+    margin-left: 120px;
 }
