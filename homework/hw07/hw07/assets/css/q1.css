@@ -8,6 +8,7 @@
     margin: 12px;
     cursor: pointer;
     opacity: 0.7;
+    transition: all 0.45s ease-in-out;
 }
 
 #row {
@@ -24,4 +25,10 @@ body, html {
     width: 100%;
     background: #f7f5f2;
     position: relative;
+}
+
+.button:hover {
+    opacity: 1;
+    border-radius: 100%;
+    transform: rotate(180deg);
 }
