@@ -1,0 +1,100 @@
+<html>
+<head>
+    <title>WDD | Hands-on 8</title>
+    <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<div id="header-caption">
+				<div id="header-caption-logo"><img class="img-scaled" src="assets/images/logo.png" /></div>
+				<div id="header-caption-name">Web Design DeCal</div>
+				<div class="clear"></div>
+			</div>
+			<div id="header-content">
+				<!-- ASSIGNMENT NAME -->
+				<div id="header-title">Hands-on 9</div>
+				<!-- DUE DATE -->
+				<div id="header-due">April 10</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="section">
+			<div class="info">
+				<!-- ASSIGNMENT TITLE -->
+				<div class="info-title">Building an Etch A Sketch</div>
+				<div class="info-content">
+					<!-- REQUIRED TOOLS -->
+					<div class="info-required">Required Tools: Google Chrome, Internet, & the Web Inspector</div>
+					<!-- INTRODUCTION -->
+					<div class="info-intro">JavaScript powers a lot of interactions on the web interface. Let's apply some concepts from this week to draw something impressive.</div>
+				</div>
+			</div>
+			<div class="body">
+				<p>This is what our sketch pad <em>may</em> look like:</p>
+				<img src="assets/images/final.gif" />
+
+				<p>Some shapes should appear under the mouse cursor as the user moves the mouse around.</p>
+
+				<div class="body-header">Step 0: Read the starter code</div>
+
+				<p>We'll only be modifying <code>assets/scripts/main.js</code> for this hands-on. It may feel a little overwhelming to see the starter code; however, mostly each part only requires one line of code (well, at most two, unless you're feeling fancy and would like to code more).</p>
+
+				<div class="body-header">Step 1: Draw some circles following the mouse</div>
+
+				<p>Let's take a look at the <code>mouseMove()</code> function and remind ourselves that it will run every time browser sees the mouse moves on the canvas. While the browser runs the function, it also provides us with an <code>event</code> loaded with information like mouse positions that we can get with <code>event.clientX</code> and <code>event.clientY</code>.</p>
+
+				<p>We've provided you with two functions (1) <code>fillCircle()</code> to draw a solid circle and (2) <code>strokeCircle()</code> to draw a circle outline. If you'd like to see how these functions work, you can read through <code>draw.js</code>, but you don't need to understand that code to complete the lab.</code></p>
+
+				<p>See how can you use those functions and values to your advantage to paint some circles on the canvas under your mouse cursor.</p>
+
+				<p><strong>Hint:</strong> Look for "Step 1" in the code comments to make your changes.</p>
+
+				<p>Now some painting should appear under your mouse cursor!</p>
+
+				<img src="assets/images/step-1.png">
+
+				<div class="body-header">Step 2: Change up some colors</div>
+
+				<p>It could be more visually exciting if we can vary the color being drawn on the canvas!</p>
+
+				<p><strong>Part 1:</strong> Store the value from the hue slider in a variable/const named <code>hue</code>.</p>
+
+				<p><strong>Part 2:</strong> Set the fill color and the stroke color of the canvas with <code>context.fillStyle</code> and <code>context.strokeStyle</code> in a HSL color format. Here's a great <a href="https://www.w3schools.com/colors/colors_hsl.asp" target="_blank">interactive demo</a> of the colors formatted in HSL. Remember that <code>context.fillStyle</code> and <code>context.strokeStyle</code> should be set to a string.</p>
+
+				<p><strong>Hint:</strong> Look for "Step 2" in the code comments to make your changes.</p>
+
+				<p>Now the color of your drawing should have an orange-like color (hue: 20) default by the hue slider. You may achieve a similar result as shown below,</p>
+
+				<img src="assets/images/step-2-1.png">
+
+				<p><strong>Part 3:</strong> Let's make the browser run <code>hueChanged()</code> for us whenever user moves the hue slider.</p>
+
+				<p><strong>Hint:</strong> Look for "Step 2" in the code comments to make your changes.</p>
+
+				<img src="assets/images/step-2-2.png">
+
+				<div class="body-header">Step 3: Fun Radius Functions</div>
+
+				<p>So far all the circles we've been drawing have a uniform radius, would it be awesome if they change up a little?</p>
+
+				<p><strong>Part 1:</strong> Imagine the radius of the circles change over time. Let's add a counter at the top of the script that will increment every time the mouse moves.</p>
+
+				<p><strong>Part 2:</strong> Let's come back to the drawing section we did earlier in part 1. Recall that the <code>fillCircle()</code> and <code>strokeCircle()</code> have a third (optional) argument that specifies the width, so that we can run <code>fillCircle(40, 20, 8)</code> to draw a circle at (40px, 20px) with a radius of 8px. Let's try to specify the circle radius with the value returned from <code>radiusFunction1()</code> and see what result it gives us.</p>
+
+				<p>With <code>radiusFunction1()</code>, you may get a similar effect as shown below,</p>
+
+				<img src="assets/images/step-3.png">
+
+				<div class="body-header">Step 4: That's all folks!</div>
+
+				<p>You've reached the end of the lab! However, do check out the other <code>radiusFunction?()</code> which will give some different effects. Notice that these functions share similar parameters; you'll only need to change the function name without tweaking the arguments to see the different looks. If you're super interested in playing a little more, you should try to experiment and write your own radius functions!</p>
+
+				<img src="assets/images/step-4.png">
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

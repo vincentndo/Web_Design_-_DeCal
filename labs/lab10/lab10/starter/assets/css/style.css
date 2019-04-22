@@ -1,0 +1,208 @@
+
+#carousel-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 3;
+	transform: translate(-50%, -50%);
+	background-color: grey;
+	/* YOUR CODE HERE */
+}
+
+#carousel-strip {
+	transition: 0.4s;
+	/* YOUR CODE HERE */
+}
+
+.carousel-section {
+	/* YOUR CODE HERE */
+}
+
+.carousel-section img {
+	/* YOUR CODE HERE */
+}
+
+/* Don't touch the code below !! */
+#left, #right {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+	z-index: 3;
+	padding: 20px;
+	font-size: 48px;
+	color: white;
+}
+
+#left {
+	left: calc(50% - 50vh);
+}
+
+#right {
+	right: calc(50% - 50vh);
+}
+
+#close {
+	color: white;
+	font: 36px/100% arial, sans-serif;
+  	position: absolute;
+	right: 20px;
+	text-decoration: none;
+	text-shadow: 0 1px 0 #fff;
+	top: 20px;
+	z-index: 3;
+}
+
+#overlay {
+	background: rgba(0, 0, 0, 0.6);
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	z-index: 2;
+	top: 0px;
+	left: 0px;
+}
+
+/* Everything below is from hw2! */
+body, html {
+	margin: 0 auto;
+	position: relative;
+}
+
+#profile-pic {
+	border-radius: 50%;
+}
+
+#follow-button {
+	padding: 5px 30px;
+}
+
+.item {
+	height: 120px;
+	width: 120px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+.row {
+	margin-top: 10px;
+}
+
+.navbar-item {
+	margin-right: 20px;
+}
+
+#follow-button:active {
+	font-size: 18px;
+	transition: 0.2s;
+}
+
+.item:hover {
+	opacity: 1;
+	transition: 0.2s;
+}
+
+.navbar-item:hover {
+	opacity: 1;
+}
+
+.navbar-item, #follow-button, .item {
+	cursor: pointer;
+}
+
+#content {
+	width: 500px;
+	height: 100vh;
+	background: #f4f4f4;
+	margin: 0 auto;
+	position: relative;
+}
+
+#navbar {
+	height: 60px;
+	background: #ffffff;
+}
+
+.navbar-item {
+	float: right;
+	line-height: 60px;
+	opacity: 0.5;
+}
+
+#header {
+	position: relative;
+	top: 0px;
+	width: 100%;
+	height: 100px;
+	padding: 10px 0px;
+}
+
+#profile-pic {
+	display: inline-block;
+	height: 80px;
+	width: 80px;
+	margin: 20px 60px;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#information {
+	display: inline-block;
+	position: absolute;
+	height: 80px;
+	left: 170px;
+	margin-top: 10px;
+	margin-left: -10px;
+	color: rgba(0,0,0, .7);
+}
+
+#username {
+	font-size: 24px;
+	display: inline-block;
+	margin-top: 10px;
+}
+
+#follow-button {
+	background: #007bb5;
+	display: inline-block;
+	margin-top: 10px;
+	margin-left: 10px;
+	color: white;
+}
+
+#about {
+	font-size: 12px;
+	margin-top: 8px;
+	color: rgba(0,0,0, .5);
+	line-height: 1.5em;
+	width: 270px;
+}
+
+.row {
+	width: 100%;
+	height: 120px;
+	text-align: center;
+}
+
+.item {
+	position: relative;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: inline-block;
+	opacity: 0.7;
+}
+
+.item, #profile-pic {
+	overflow: hidden;
+	position: relative;
+}
+
+img {
+	height: 100%;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+html, body {
+	background: #fafafa;
+	font-family: 'Roboto', sans-serif;
+}

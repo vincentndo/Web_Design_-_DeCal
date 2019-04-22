@@ -1,0 +1,117 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hands-on 10</title>
+    <link rel="stylesheet" type="text/css" href="assets/styles/atom-one-light.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="header-caption">
+                <img id="header-caption-logo" src="assets/images/logo.png">
+                <div id="header-caption-name">Web Design DeCal</div>
+            </div>
+            <div id="header-content">
+                <div id="header-title">Hands-on 10</div>
+                <div id="header-due">April 17th</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="block-highlight">
+
+<p>Today, we'll be working with jQuery to make our finsta more dynamic. We'll be implementing a lightbox and carousel, which allows users to view a larger version of multiple images!</p>
+
+            </div>
+
+<!-- Body starts here -->
+<p>Your final product should be something like this:</p>
+<video controls>
+    <source src="assets/videos/final.mov" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<h2 id="part-1-carousel-html">Part 1: Carousel HTML</h2>
+<p>The carousel's HTML structure contains of a few parts: the carousel container, the carousel strip, and the carousel sections. Here's how they're broken up:</p>
+<ul>
+<li>The carousel container contains the viewable portion of the carousel, and is the parent div to the carousel strip. It should be a mask for its children -- that means, if its children happen be a greater size than its width or height, the parts that overflow will be hidden (in CSS, this means overflow: hidden)</li>
+<li>There are multiple carousel sections, one for each of the different views the carousel container can show</li>
+<li>The carousel strip is made up of all the sections lined up horizontally, and is nested inside the carousel container</li>
+</ul>
+<p>To move the carousel, we move the left or right css attributes of the carousel strip so that the next or previous carousel section on the carousel strip is visible.</p>
+<p>To put things in motion, see the video below. We've removed the overflow:hidden property of the carousel container to make the movement of the carousel strip more clear. The box with the red border is the carousel container, the blue border is the carousel strip, and each of the carousel sections has a black border.</p>
+<video controls>
+    <source src="assets/videos/carousel.mov" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<p><strong>MAKE SURE YOU HAVE A CLEAR UNDERSTANDING OF THE STRUCTURE OF THE CAROUSEL BEFORE TRYING TO IMPLEMENT IT IN HTML.</strong></p>
+<p>Place your carousel code in <code>starter_file.html</code> between the left and right divs. Give your carousel container an id of <code>carousel-container</code>, your carousel strip an id of <code>carousel-strip</code>, and each section a class of <code>carousel-section</code>. You should have 9 carousel sections, and each one should have a nested image tag that corresponds to the images in the grid.</p>
+<p><details>
+    <summary>
+        <strong>Hint:</strong> If you're struggling, click on me! We highly encourage you tackling this on your own first, though.
+    </summary>
+    <img src="assets/images/hint1.png" alt="Hint 1" />
+</details></p>
+<h2 id="part-2-some-css">Part 2: Some CSS</h2>
+<p>We've given you some of the carousel styling to position the carousel, but if you open <code>starter_file.html</code>, it won't look like a carousel until we add in some more styling. Here's what you have to do:</p>
+<ul>
+<li>Give the carousel container a height and width of 450px.</li>
+<li>Set the carousel container's overflow property to hidden</li>
+<li>Make the carousel strip have absolute positioning, and set its left property</li>
+<li>Which image do you think this sets the carousel to start at?</li>
+<li>We want the images in the carousel to be stacked horizontally: to do this, give the carousel strip flex display.</li>
+<li>Give the carousel section class a height and width of 450px and relative positioning.</li>
+<li>Give the image inside the carousel section to have a width of 450 pixels</li>
+</ul>
+<p><strong>Your carousel should now look like static image with two nonfunctional arrows on the side! Yay</strong> 🎊</p>
+<h2 id="part-3-javascript-magic">Part 3: JavaScript Magic!</h2>
+<p>Let's make this functional and dynamic! Let's look at what we've defined for you so far:</p>
+<ul>
+<li>A constant variable <code>distanceToNextImage</code>, which is -450. The reason why it's -450 is because each picture is 450px wide, so we need to move 450px in some direction to get to the next image. The reason why it is negative is because to move to the next image (clicking on the right arrow), we need to reduce the "left" property to be more negative, dragging the strip more to the left so that the next image on the right shows.</li>
+<li>A variable <code>currentImageNumber</code>, which is set to 0, which corresponds to the first image. Notice how each of the grid images in the HTML has an id that represents its image number (NOT the <code>src</code> attribute of the image). This keeps track of which image our carousel should display.</li>
+<li>We also included code to close the lightbox when pressing the overlay or the x. We recommend looking at that when you have time!</li>
+</ul>
+<p>Alright, let's get started!</p>
+<ol>
+<li>When the user clicks on the right arrow, we should increase the <code>currentImageNumber</code> by one. Then, we should set the <code>left</code> property of the carousel strip to <code>currentImageNumber * distanceToNextImage</code> pixels.<br />
+<em>How does this multiplication of numbers set the left property to the appropriate value? Think about this!</em></li>
+<li>Similarly, when the user clicks on the left arrow, we should change <code>currentImageNumber</code>; however, this time, we should decrease it by 1, since we're moving to the left image. Then, change the <code>left</code> property of the carousel strip in a similar manner to the right arrow.<br />
+<em>Why can we use the same line of code to set the CSS for both the left and right arrows, even though they're moving in opposite directions?</em></li>
+<li>Our carousel should now work! However, the lightbox shouldn't be the first thing showing when you open up the page. In the beginning of your file, right after the variables we have defined for you, select the lightbox and use jQuery's <code>.hide()</code> method to hide the lightbox. </li></li>
+<li>Add code such that when the user clicks on an item, the lightbox appears (use the opposite of <code>.hide()</code>!)</li></li>
+<li>Notice that when the lightbox appears, it always starts on the image that you last left it off on (or the first image, if it's the first time you loaded the page). Ideally, we should have the image correspond to the item you just clicked on. To do this, in your <code>click</code> method for the item, right before the line where you show the lightbox, do the following:<ol>
+<li>Get the id of the item you clicked on, then use <code>parseInt</code> to turn it from a string with "px" at the end to just the number in the front. This should be the current image number -- set the appropriate variable to that number!<br />
+To turn a string (with <code>"px"</code> or some other thing added to the end) into a number, use  <code>parseInt</code>. For example, <code>let twelve = parseInt("12px", 10)</code> will store the number <code>12</code> in the variable <code>twelve</code>.</li>
+<li>Use the same multiplication logic from the left and right arrows to set the <code>left</code> css property of the carousel strip.</li></ol></li>
+</ol>
+<p><strong>Great! THAT'S IT! You've got a carousel up and running! Feel free to get checked off now! If you have free time, however, feel free to fix some things (see below!)</strong></p>
+<h2 id="part-4-optional-bugs-fixes">Part 4 [Optional]: BUGS! FIXES!</h2>
+<p>You might notice that this carousel comes with some bugs. For example, if you click past the first and last image, we just get into some weird gray matter. This is because we have moved the carousel strip to a left value that's beyond the see-able range of the carousel container, and so the gray is just the color of the carousel container background.<br />
+To fix this, when updating the <code>currentImageNumber</code> after clicking left or right, we will use the modulo <code>%</code> symbol. You use it just like any of the other arithmetic operators <code>+, -, /, *</code> but it essentially gives you the remainder of dividing the first number with the second number.</p>
+<p>Thus, modulo your new <code>currentImageNumber</code> with SOME other number such that the new number should never be greater than 8 (since that is the largest currentImageNumber, which starts at 0).<br />
+<strong>Hint:</strong> When getting a remainder, notice that the remainder will never be larger than the number you used to divide (the denominator, essentially). So if you do n / x, the remainder will be within the range [0, x-1].</p>
+<p>Great! What you'll notice now is that the right button will zoom to the first image once you get past the last image, but the left one still errors. This is because Javascript's modulo handles negative numbers with a negative result (If you want to read more, the <code>%</code> is actually just remainder, not modulo. Real modulo should always return a positive number in the range given in the hint. See <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder_()">here</a>.)</p>
+<p>To fix this, you can look ahead in the class (we'll be covering this on Monday!) and read about <a href="https://www.w3schools.com/js/js_if_else.asp">conditional statements</a>, letting you set <code>currentImageNumber</code> to a different value in the case it hits a negative number, or you can just use this piece of code that includes shorthand syntax for conditional statements:</p>
+<pre><code>currentImageNumber = currentImageNumber == <span class="hljs-number">0</span>
+    ? <span class="hljs-number">8</span>
+    : (currentImageNumber - <span class="hljs-number">1</span>);</code></pre>
+<p>It checks if current image number is 0, and if it is, then it sets the new number to 8; if it isn't, then it decreases it by one as usual.</p>
+<p><strong>AND THAT'S THE END OF THE FINSTAGRAM SERIES. WE HOPE YOU ENJOYED IT.</strong></p>
+<!-- Body ends here -->
+
+        </div>
+        <div class="section">
+            <h2>Submission</h2>
+            <div class="block-highlight">
+
+<!-- Submission info starts here -->
+<p>No need to submit anything :)</p>
+<!-- Submission info ends here -->
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<!-- @webdesigndecal/mark2html@0.0.4 -->
