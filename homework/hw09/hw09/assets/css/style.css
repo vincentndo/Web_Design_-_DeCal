@@ -64,6 +64,7 @@ body {
 .outfit {
 	z-index: 10;
 	position: absolute;
+	display: none;
 }
 
 #o1 {
@@ -125,3 +126,8 @@ body {
 	bottom: 30%;
 }
 
+.outfit {
+z-index: 10;
+position: absolute;
+display: none;
+}
