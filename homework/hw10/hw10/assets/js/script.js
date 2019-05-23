@@ -34,8 +34,6 @@ $(document).ready(function() {
       // DON'T CHANGE ANYTHING ABOVE THIS LINE 
       // **************************************
 
-
-
       // Add 5 total conditional statements for each respective key code,
       // 4 of these should be for the key codes listed in the sounds js object
       // and the last statement should cover the condition in which any other 
@@ -46,15 +44,26 @@ $(document).ready(function() {
       // Create conditionals below
       // **************************
 
-
-
-
-
-
-
+      if (e.which == 81) {
+        $("#kick .button-overlay").show()
+        $("#kick .button-overlay").fadeOut(100)
+      } else if (e.which == 87) {
+        $("#snare .button-overlay").show()
+        $("#snare .button-overlay").fadeOut(100)
+      } else if (e.which == 69) {
+        $("#hat .button-overlay").show()
+        $("#hat .button-overlay").fadeOut(100)
+      } else if (e.which == 82) {
+        $("#glass .button-overlay").show()
+        $("#glass .button-overlay").fadeOut(100)
+      } else {
+        $("#display").stop(true, true)
+        $("#display").text("cowbell!!!")
+        $("#display").show()
+        $("#display").fadeOut()
+      }
 
   });
-  
 
 
   // A js object that stores the names of popular artists.
@@ -83,7 +92,12 @@ $(document).ready(function() {
   // Create your for loop below this line    
   // ************************************
 
-
+  var i
+  for (i = 0; i < 30; i++) {
+    let idx = i % 8
+    let artist = "<div class='artist-item'>" + artists[idx] + "</div>"
+    $("#artist-container").append(artist)
+  }
 
   // Lab complete! Make sure you get checked off by a TA
 });
