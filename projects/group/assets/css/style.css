@@ -1,0 +1,169 @@
+body {
+  background-color: #C9ADA1;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: black
+}
+
+#navbar {
+    display: flex;
+    border: .01px black;
+    height: 10%;
+    background-color: black;
+}
+
+
+#logo {
+    display: inline-block;
+}
+
+.item {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.row .item .image:hover {
+  opacity: 0.5;
+  transition-delay: 5ms;
+}
+.row {
+  margin-top: 70px;
+  text-align: center;
+}
+
+#search {
+    display: inline-block;
+}
+
+.alphabet:hover {
+  color: black;
+}
+
+.logo:hover {
+  color: black;
+}
+
+
+#HomeText{
+    text-align: center;
+
+
+}
+
+.WelcomeText {
+    text-align: center;
+    font-size: 30px;
+}
+
+.Description {
+    font-size: 30px;
+    line-height: 10%;
+}
+
+
+/** ARTIST CSS **/
+
+#navbarArtist {
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+  	padding-right: 10px;
+  	padding-top: 10px;
+  	padding-bottom: 10px;
+    justify-content: space-around;
+    color: #EAE0CC;
+    background-color: #4D6A6D;
+}
+
+#navbarArtist input[type=text] {
+  padding: 6px;
+  border: none;
+  margin-right: 16px;
+  font-size: 13px;
+}
+
+.alphabet {
+  padding-top: 5px;
+  align-items: center;
+  font-size: 25px;
+}
+.alphabet:hover {
+  color: #798478;
+}
+.logo {
+  font-size: 30px;
+  font-style: oblique;
+}
+.logo:hover {
+  color: #798478;
+}
+.SongTitles {
+  color: #798478;
+  text-align: center;
+  font-size: 18px;
+}
+.Artist{
+  text-align: center;
+  color: #798478;
+}
+
+#Buttons{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button {
+  background-color: #A0A083;
+  border-radius: 20px;
+  border: none;
+  color: #EAE0CC;
+  padding: 20px;
+  font-size: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.button:hover{
+  background-color: #4D6A6D;
+}
+.Album {
+  text-align: center;
+  color: #798478;
+  font-size: 22px;
+}
+
+/** SEARCH RESULTS **/
+#SearchResults {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-right: 150px;
+  margin-left: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #C38FA7;
+  border-radius: 8px;
+}
+
+.Result {
+  font-size: 20px;
+  margin-bottom: -35px;
+}
+
+.ListResult {
+  align-self: flex-start;
+  margin-left: 8px;
+  margin-right: 8px;
+  font-size: 18px
+}
+
+.ButtonResult {
+  margin-top: 8px;
+}
+
+hr { 
+  display: flex;
+  width: 100%;
+  margin-top: -2px;
+  margin-bottom: -2px;
+  color:#FED0D5;
+}
