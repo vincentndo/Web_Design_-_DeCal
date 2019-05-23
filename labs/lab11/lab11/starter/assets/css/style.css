@@ -1,0 +1,100 @@
+body, html {	/*the outer layer of the site and global style attributes*/
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+margin: 0px;
+height: 100%;
+width: 100%;
+background: #f7f5f2;
+position: relative;
+}
+
+/* Utility Stylesheets */
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+.clear {
+clear: both;
+}
+
+.img-scaled {
+width: 100%;
+}
+
+#filtering {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.square {
+    background: #2f353f;
+}
+
+#nav-bar {
+    width: 100%;
+    top: 15%;
+    position: relative;
+    text-align: center;
+    transform: translateY(-50%);
+}
+
+.nav-item {
+    height: 40;
+    width: 150px;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 40px;
+    transition: 0.2s;
+    margin: 0px 5px;
+    letter-spacing: 2px;
+    transition: 0.2s all;
+    text-transform: uppercase;
+}
+
+
+.inactive {
+    border: 2px solid #2f353f;
+    color: #2f353f;
+}
+
+.inactive:hover {
+    opacity: 0.6;
+}
+
+.active {
+    border: 2px solid #2f353f;
+    background: #2f353f;
+    color: white;
+}
+
+#content {
+    height: 100%;
+    width: 60vw;
+    margin: 0 auto; 
+    position: relative;
+    top: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.fruit, .bread, .water {
+    height: calc(15vw - 15px);
+    width: calc(15vw - 15px);
+    background: #2f353f;
+    margin: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+img {
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+

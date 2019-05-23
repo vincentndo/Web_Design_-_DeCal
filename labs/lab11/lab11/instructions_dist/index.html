@@ -1,0 +1,109 @@
+<!-- Explorer starts here -->
+<!-- Explorer ends here -->
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hands-on 11</title>
+    <link rel="stylesheet" type="text/css" href="-mark2html-resources/assets/styles/atom-one-light.css">
+    <link rel="stylesheet" type="text/css" href="-mark2html-resources/assets/styles/style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="header-caption">
+                <img id="header-caption-logo" src="-mark2html-resources/assets/images/logo.png">
+                <div id="header-caption-name">Web Design DeCal</div>
+            </div>
+            <div id="header-content">
+                <div id="header-title">Hands-on 11</div>
+                <div id="header-due">April 24th</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="block block-highlight">
+
+<p>Today, we'll be applying what we've learned about loops and conditionals to better understand JavaScript's potential. JavaScript is hands down the most powerful tool you will learn in your web design career. HTML and CSS are both static: once we declare a style or a div, it doesn't change for the life span of the website. JS, on the other hand, not only allows us to change our website dynamically, but it allows us to change our HTML and CSS dynamically as well. This lab is meant to show you some of the applications of JS in different aspects of web design.</p>
+<p>You must NOT make any changes to HTML/CSS document in these questions. All of your changes should only be in <code>script.js</code>.</p>
+
+            </div>
+
+<!-- Body starts here -->
+<h1 id="overview">Overview</h1>
+<p>By the end of this assignment, we will create a really cool filtering system using what we've learned about JavaScript and jQuery.</p>
+<h1 id="part-1-for-loops">Part 1: For Loops</h1>
+<p>If you open up the <code>index.html</code>, it should look pretty barren and empty with just the nav bar on the top :( All the buttons are in their active state (the items should be showing), but no items are showing! This is because currently, we haven't populated the HTML with all the possible elements to filter through.</p>
+<p>Add code in your <code>script.js</code> file so that you fill the <code>div</code> with the id <code>content</code> to include six fruit elements, 12 water elements, and 8 bread elements. Your elements should be as follows:</p>
+<ul>
+<li>Bread elements should be <code>div</code> elements with the class <code>bread</code>, and inside the <code>div</code> include an <code>img</code> tag where the source is <code>assets/img/bread.jpeg</code>.</li>
+<li>Water elements should be <code>div</code> elements with the class <code>water</code>, and inside the <code>div</code> include an <code>img</code> tag where the source is <code>assets/img/water.jpeg</code>.</li>
+<li>Fruit elements should be <code>div</code> elements with the class <code>fruit</code>, and inside the <code>div</code> include an <code>img</code> tag where the source is <code>assets/img/fruit.jpeg</code>.</li>
+</ul>
+<p>You can create all of these elements using a for loop; recall that for loops are written like so:</p>
+<pre><code class="js language-js"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> <span class="hljs-keyword">variable</span> = <span class="hljs-keyword">start</span>; stoppingCondition; doAfterEachLoop) {
+    // Things <span class="hljs-keyword">to</span> do <span class="hljs-keyword">at</span> each iteration
+}</code></pre>
+<p>where <code>variable</code> is the name of the variable that serves as your iterator (often called <code>i</code> or <code>j</code> by convention--<code>i</code> is short for iterator!), <code>start</code> is the value at which <code>variable</code> should start in the first iteration of the loop, <code>stoppingCondition</code> is a conditional statement that determines when the loop should stop, and <code>doAfterEachLoop</code> is some statement that should be executed at the end of each loop to change the value of <code>variable</code> (e.g. for <code>i</code> to count up, <code>i++</code>, or to count down, <code>i--</code>).</p>
+<p>Great! Now our JavaScript should flesh out our HTML, and you should see all the elements created from the first part!</p>
+<h1 id="part-2-conditional-statements">Part 2: Conditional Statements</h1>
+<p>Recall that an if statement, or conditional statement, is written like so:</p>
+<pre><code class="js language-js"><span class="hljs-keyword">if</span> (condition) {
+    // <span class="hljs-keyword">Do</span> something that <span class="hljs-keyword">only</span> happens <span class="hljs-keyword">if</span> the condition <span class="hljs-keyword">is</span> <span class="hljs-keyword">true</span>
+}</code></pre>
+<p>where <code>condition</code> is a conditional expression (i.e. it returns <code>true</code> or <code>false</code>) that determines whether or not the body of the if statement gets executed.</p>
+<p>We can also use boolean operations to combine conditions:</p>
+<ul>
+<li><code>x &amp;&amp; y</code> returns <code>true</code> if both <code>x</code> and <code>y</code> is true. If <code>x</code> is false, <code>y</code> will not be evaluated--it will immediately return false.</li>
+<li><code>x || y</code> returns <code>true</code> if <code>x</code> or <code>y</code> is true (or both are true). If <code>x</code> is true, <code>y</code> will not be evaluated--it will immediately return true.</li>
+</ul>
+<p>Conditional statements allow us to define multiple states of our webpage. Now, the state of our webpage becomes conditionally dynamic--meaning that the state that one user sees can be completely different from another user based on the decisions of that user.</p>
+<p>Sometimes we want to be able to select multiple buttons at a time. For this part, when you toggle a button, all the associated pictures should appear/dissapear. Uncomment the second half of the code (delete the <code>/*</code> and <code>*/</code> that comments out the second half of the code) and do the following:</p>
+<ul>
+<li>First, set condition to an expression that returns a boolean. This is the boolean that will be used in our if/else statement.<br />
+<em>HINT: What are the only two states a button can be in? The variable <code>buttonActive</code> looks pretty helpful… how can we use this this so that the correct block of code in the if statements gets run?</em></li>
+<li>Next, inside the if block code and the else block code, show the items that are selected, and hide those that aren't.<br />
+<em>HINT: You might want to use the jQuery functions <code>.show()</code> and <code>.hide()</code>.</em><br />
+<em>HINT: How do you know which items to show or hide? The variable <code>buttonName</code> looks pretty helpful…</em></li>
+</ul>
+<p>Your filtering website should now be done!</p>
+<p>If you are lost during this assignment, do not fret! Learning to program takes time and practice--we've just begun to explore, so don't worry if some of these concepts aren't quite clear. Be sure to ask a TA or instructor or post on Piazza to get your questions answered!</p>
+<h1 id="part-3-uploading-your-website-to-github">Part 3: Uploading Your Website to GitHub</h1>
+<p>GitHub is a web service we can use to host our HTML, CSS, and JavaScript code, and have it be shared as a website, so other people can visit it on the web! We'll use GitHub to upload and share your final projects, and to help you prepare, we'll also go over how to deploy a site to the web using GitHub today in lab.</p>
+<p>We'll go over this portion together during the last part of the lab, but if you're coming back to this at a later date or want another reference, you can watch <a href="https://www.youtube.com/watch?v=rlwxtfKO3a0">this video</a>, which also goes over how to use GitHub to deploy your website publicly.</p>
+<p>Be sure to make an account at <a href="https://github.com">GitHub.com</a> if you don't have one yet -- it doesn't matter if you use your Berkeley email, or a personal one.</p>
+<hr />
+<p>Congratulations on hosting your first website! Ask a TA for checkoff whenever you're ready.</p>
+<!-- Body ends here -->
+
+        </div>
+        <div class="section explorer">
+            <h2>More to Explore</h2>
+            <div class="block block-highlight">
+                <p>
+Want to dive deeper into the content covered in this lab? You can explore some related topics here! If not, continue on to checkoff. You don't have to understand stuff we talk about in this section.
+</p>
+                <input id="explorer-toggle" type="checkbox"/>
+                <label for="explorer-toggle" class="btn">Release the kraken</label>
+                <p></p>
+                <div class="block block-unhighlight explorer-text">
+
+<p><small class="footnote" id="footnote-1"><a href="#footnote-1-backlink"><sup>[1]</sup></a>: Footnote <!--TODO: Add footnotes or remove this section--></small></p>
+
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Submission</h2>
+            <div class="block block-highlight">
+
+<!-- Submission info starts here -->
+<p>Your lab checkoff word will be the same as your attendance word! No need to submit anything :)</p>
+<!-- Submission info ends here -->
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<!-- @webdesigndecal/mark2html@0.0.11 -->
